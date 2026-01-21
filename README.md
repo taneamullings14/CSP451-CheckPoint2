@@ -42,3 +42,11 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+
+## Database Connection
+
+This project includes a simulated database connection module to demonstrate how an application initializes and manages a dtabase connection without requiring a real database. 
+
+The connection is initialied on server startup, and a status endpoint is exposed at:
+
+GET /db-status
