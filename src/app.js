@@ -6,6 +6,8 @@ const { router: viewRouter } = require("./routes/views");
 
 const app = express();
 
+import {authenticationUser } from "./services/authService.js";
+
 // Body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,4 +33,11 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
+});
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  const result = authenticatieUser(username, password);
+  res.json(result);
 });
