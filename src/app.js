@@ -1,3 +1,5 @@
+// User authentication routes registered here
+
 import { router as loginRouter } from "./routes/login.js";
 
 import express from "express"; 
