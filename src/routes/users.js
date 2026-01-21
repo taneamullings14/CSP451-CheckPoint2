@@ -9,7 +9,7 @@ const router = express.Router();
  */
 
 const users = [
-  { id: 1, name: "Alice" }
+  { id: 1, name: "Alice" }, 
   { id: 2, name: "Bob" }
 ];
 
@@ -30,4 +30,4 @@ router.get("/:id", (req, res) => {
   res.json(user);
 });
 
-export deafult router;
+export default router;

@@ -1,12 +1,19 @@
-const express = require("express");
-const path = require("path");
+import path from "path";
+import { fileURLToPath } from "url";
 
-const { router: apiRouter } = require("./routes/api");
-const { router: viewRouter } = require("./routes/views");
+// Recreate __filename and __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+import express from "express"; 
+
+import { router as apiRouter } from "./routes/api.js";
+import { router as viewRouter } from "./routes/views.js";
 
 const app = express();
 
-import usersRouter from "./routes/users.json";
+import usersRouter from "./routes/users.js";
 
 // Body parsing
 app.use(express.json());
