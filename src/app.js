@@ -1,3 +1,5 @@
+import { router as loginRouter } from "./routes/login.js";
+
 const express = require("express");
 const path = require("path");
 
@@ -10,6 +12,7 @@ import {authenticationUser } from "./services/authService.js";
 
 // Body parsing
 app.use(express.json());
+app.use("/login", loginRouter);
 app.use(express.urlencoded({ extended: true }));
 
 // Static frontend
