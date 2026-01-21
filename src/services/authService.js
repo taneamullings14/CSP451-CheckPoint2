@@ -17,6 +17,12 @@ export function authenticateUser(username, password) {
   if (password.length < 6) {
     return {
       success: false,
-      message: "Authentication successful"
+      message: "Password must be at least 6 characters"
     };
   }
+
+  return {
+    success: true,
+    message: "Authentication successful"
+  };
+}
