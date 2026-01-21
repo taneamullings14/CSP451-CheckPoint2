@@ -6,8 +6,11 @@ const { router: viewRouter } = require("./routes/views");
 
 const app = express();
 
+import usersRouter from "./routes/users.json";
+
 // Body parsing
 app.use(express.json());
+app.use("/api/users", usersRouter);
 app.use(express.urlencoded({ extended: true }));
 
 // Static frontend
