@@ -42,3 +42,11 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+
+# API Endpoints
+
+The application provides RESTful endpoints
+for retriving user data.
+
+- GET /api/users
+- GET /api/users/:id
