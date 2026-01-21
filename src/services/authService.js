@@ -6,7 +6,7 @@
  * and basic login validation behavior.
  */
 
-export function authenticateUser(username, password) {
+export function authenticationUser(username, password) {
   if (!username || !password) {
     return {
       success: false, 

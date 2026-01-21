@@ -9,13 +9,13 @@ const users = [
 
 // GET login page
 router.get("/", (req, res) => {
-  res.send('
+  res.send(`
     <form method="POST">
       Username: <input name="username"/>
-      Password: <input name="password" type="password/>
+      Password: <input name="password" type="password"/>
       <button>Login</button>
-    </form?
-  ');
+    </form>
+  `);
 });
 
 // POST login
@@ -23,9 +23,11 @@ router.post("/", express.urlencoded({ extended: true }), (req, res) => {
   const { username, password } = req.body;
   const user = users.find(u => u.username === username && u.password === password);
 
-if (user) { 
-  res.send(\'Welcome, \${username}!\');
-} else {
-  res.status(401).send("Invalid credentials");
-}
+  if (user) { 
+    res.send(`Welcome, ${username}!`);
+  } else {
+    res.status(401).send("Invalid credentials");
+  }
 });
+
+export default router;

@@ -1,14 +1,17 @@
 import { router as loginRouter } from "./routes/login.js";
 
-const express = require("express");
-const path = require("path");
-
-const { router: apiRouter } = require("./routes/api");
-const { router: viewRouter } = require("./routes/views");
+import express from "express"; 
+import path from "path";
+import { fileURLToPath } from "url";
+import apiRouter from "./routes/api.js";
+import viewRouter from "./routes/views.js";
 
 const app = express();
 
 import {authenticationUser } from "./services/authService.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Body parsing
 app.use(express.json());
