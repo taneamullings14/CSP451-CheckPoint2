@@ -13,6 +13,13 @@ export function authenticateUser(username, password) {
       message: "Username and password are required"
     };
   }
+ 
+  if (username.length < 3) {
+    return {
+      success: false,
+      message: "Username must be at least 3 characters"
+    };
+  }
 
   if (password.length < 6) {
     return {
