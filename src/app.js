@@ -1,4 +1,4 @@
-// User authentication routes registered here
+
 
 import { router as loginRouter } from "./routes/login.js";
 
@@ -18,6 +18,27 @@ const __dirname = path.dirname(__filename);
 // Body parsing
 app.use(express.json());
 app.use("/login", loginRouter);
+
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Recreate __filename and __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+import express from "express"; 
+
+import { router as apiRouter } from "./routes/api.js";
+import { router as viewRouter } from "./routes/views.js";
+
+const app = express();
+
+import usersRouter from "./routes/users.js";
+
+// Body parsing
+app.use(express.json());
+app.use("/api/users", usersRouter);
 app.use(express.urlencoded({ extended: true }));
 
 // Static frontend
