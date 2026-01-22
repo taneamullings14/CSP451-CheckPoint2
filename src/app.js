@@ -34,7 +34,19 @@ import { router as viewRouter } from "./routes/views.js";
 
 const app = express();
 
+
+connectDatabase();
+
+app.get("/db-status", (req, res) => {
+  res.json({
+    connected: getDatabaseStatus()
+  });
+});
+
+import { connectDatabase, getDatabaseStatus } from "./db/database.js";
+
 import usersRouter from "./routes/users.js";
+
 
 // Body parsing
 app.use(express.json());
