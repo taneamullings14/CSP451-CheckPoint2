@@ -1,0 +1,16 @@
+# Simulated GitHub Issues
+
+## Issue 1: User Authentication
+- Improve login form UI
+- Validate username/password
+- Connect frontend login form to backend
+
+## Issue 2: Database Connection
+- Add database connection module
+- Configure connection logic
+- Ensure database connects successfully
+
+## Issue 3: API Endpoints
+- Add REST API structure
+- Implement endpoints for users
+- Ensure endpoints return proper JSON responses
