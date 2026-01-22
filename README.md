@@ -50,3 +50,10 @@ This project includes a simulated database connection module to demonstrate how 
 The connection is initialied on server startup, and a status endpoint is exposed at:
 
 GET /db-status
+
+- Add databases connection module
+- Configure connection logic
+
+## User Authentication
+- GET /login - shows login form
+- POST /login - validates username/password
