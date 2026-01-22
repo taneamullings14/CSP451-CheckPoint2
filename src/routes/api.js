@@ -1,6 +1,6 @@
-const express = require("express");
+import express  from "express";
 
-const router = express.Router();
+export const router = express.Router();
 
 /**
  * Starter endpoint to prove the API works.
@@ -12,4 +12,4 @@ router.get("/health", (req, res) => {
   res.json({ status: "ok", time: new Date().toISOString() });
 });
 
-module.exports = { router };
+export default router;
